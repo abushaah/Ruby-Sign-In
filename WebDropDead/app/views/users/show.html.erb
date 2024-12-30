@@ -1,0 +1,13 @@
+<h1>User: <%= @user.username %></h1>
+
+<div>
+  <%= link_to "Play New Game", new_user_game_path(user_id: @user.id) %> <!-- new.html.erb -->
+</div>
+<br>
+<div>
+  <%= link_to "View Game History", user_game_histories_path(@user) %> <!-- index.html.erb -->
+</div>
+<br>
+<div>
+  <%= button_to "Exit", session_path, method: :delete, data: { confirm: "Are you sure you want to sign out?" } %>
+</div>

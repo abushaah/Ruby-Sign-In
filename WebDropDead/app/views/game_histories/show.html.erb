@@ -1,0 +1,16 @@
+<h1>Game History</h1>
+
+<p>
+  <strong>Game ID:</strong> <%= @game.id %><br>
+  <strong>Number of Players:</strong> <%= @game.num_players %><br>
+  <strong>Number of Sides:</strong> <%= @game.num_sides %><br>
+  <strong>Number of Dice:</strong> <%= @game.num_dice %><br>
+  <strong>Date Played:</strong> <%= @game_history.date_played %>
+  <div style="border: 1px solid black; padding: 10px; margin-top: 10px;">
+    <strong>AutoDropDead Result:</strong>
+    <%= simple_format(@game.result) %>
+  </div>
+</p>
+
+<%= link_to 'Go Back', user_game_histories_path(@user) %>
+<%= link_to 'Exit', new_session_path %>

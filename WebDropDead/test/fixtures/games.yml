@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  num_players: 1
+  num_sides: 1
+  num_dice: 1
+  result: MyString
+  user: one
+
+two:
+  num_players: 1
+  num_sides: 1
+  num_dice: 1
+  result: MyString
+  user: two

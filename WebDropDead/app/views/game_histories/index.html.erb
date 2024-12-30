@@ -1,0 +1,24 @@
+<h2>Game History</h2>
+
+<% if flash[:alert] %>
+  <p style="color: red;"><%= flash[:alert] %></p>
+<% end %>
+
+<% if @game_histories.any? %>
+  <ul>
+    <% @game_histories.each do |game_history| %>
+      <li>Game History ID: <%= game_history.user_game_history_id %> | Played At: <%= game_history.date_played %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No saved games available.</p>
+<% end %>
+
+<h3>Select a Game by History ID</h3>
+<%= form_with url: select_game_user_game_histories_path(@user), method: :post, local: true do |form| %>
+  <%= form.label :user_game_history_id, "Game History ID" %>
+  <%= form.text_field :user_game_history_id %>
+  <%= form.submit "Select Game" %>
+<% end %>
+<br>
+<%= link_to 'Go Back', user_path(@user) %>

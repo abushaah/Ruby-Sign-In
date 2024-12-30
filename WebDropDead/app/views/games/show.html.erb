@@ -1,0 +1,19 @@
+<h1>Drop Dead Dice Game Results</h1>
+
+<p>
+  <strong>Game ID:</strong> <%= @game.id %><br>
+  <strong>Number of Players:</strong> <%= @game.num_players %><br>
+  <strong>Number of Sides:</strong> <%= @game.num_sides %><br>
+  <strong>Number of Dice:</strong> <%= @game.num_dice %><br>
+  <div style="border: 1px solid black; padding: 10px; margin-top: 10px;">
+    <strong>AutoDropDead Result:</strong>
+    <%= simple_format(@game.result) %>
+  </div>
+</p>
+
+<br>
+<%= button_to 'Play Again', repeat_user_game_path(@user, @game), method: :post %>
+<br>
+<%= link_to 'Change Settings', new_user_game_path %>
+<br><br>
+<%= link_to 'Go Back', user_path(@user) %>

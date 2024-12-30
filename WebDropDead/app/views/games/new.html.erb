@@ -1,0 +1,20 @@
+<h1>Play Drop Dead Dice Game</h1>
+
+<% if flash[:error] %>
+  <p style="color:red;"><%= flash[:error] %></p>
+<% end %>
+
+<%= form_with model: @game, url: user_games_path(@user), local: true do |form| %>
+  <%= form.label :number_of_players %>
+  <%= form.number_field :num_players %>
+
+  <%= form.label :number_of_sides %>
+  <%= form.number_field :num_sides %>
+
+  <%= form.label :number_of_dice %>
+  <%= form.number_field :num_dice %>
+
+  <%= form.submit 'Submit' %>
+  <br><br>
+  <%= link_to 'Go Back', user_path(@user) %>
+<% end %>

@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  game: one
+  user: one
+  date_played: 2024-11-12 12:26:51
+
+two:
+  game: two
+  user: two
+  date_played: 2024-11-12 12:26:51
